@@ -3,5 +3,6 @@ class ContactController < ApplicationController
      end
 
      def create
+        @name =params[:name]
      end
 end
