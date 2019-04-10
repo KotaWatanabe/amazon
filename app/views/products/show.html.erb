@@ -1,0 +1,13 @@
+<h3><%= @product.title %></h3>
+
+<p><%= @product.description %></p>
+
+<p><%= @product.price %></p>
+
+
+ <small>
+    <%= link_to "Edit", product_edit_path(@product)%>
+ </small>
+<small>
+    <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: "Are you sure?"}%>
+ </small>
