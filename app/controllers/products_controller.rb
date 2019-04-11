@@ -16,6 +16,8 @@ class ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
+        @review = Review.new
+        @reviews = @product.reviews.order(created_at: :desc)
     end
 
     def index
@@ -25,7 +27,7 @@ class ProductsController < ApplicationController
     def destroy
         product = Product.find(params[:id])
         product.destroy
-        redirect_to index_path
+        redirect_to products_path
     end
 
     def edit
