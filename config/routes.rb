@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   get("/about", {to: "home#about"})
   get("/contact_us", {to: "contact#new"})
   post("/contact_us/create", {to: "contact#create"})
+  get("/admin/panel", {to: "admin#index"})
+
+  # User route
+  resources :users, only:[:new, :create]
+
+  # Session route
+  resource :session, only:[:new, :create, :destroy]
+
   # new products route
   resources :products do
   resources :reviews, only: [:create, :destroy]

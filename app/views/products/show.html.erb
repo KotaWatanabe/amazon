@@ -4,6 +4,9 @@
 
 <p><%= @product.price %></p>
 
+<small>
+ Posted by <%= @product.user.first_name  %> 
+</small>
 
  <small>
     <%= link_to "Edit", edit_product_path(@product)%>
@@ -53,6 +56,9 @@
           </small>
           <small>
             Reviewd <%= time_ago_in_words(review.created_at) %> ago
+          </small>
+          <small>
+             Reviewd by <%= review.user.first_name  %> 
           </small>
         </p>
         </li>

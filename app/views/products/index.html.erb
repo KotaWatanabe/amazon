@@ -9,6 +9,9 @@
             <small>
                 Posted <%= time_ago_in_words(product.created_at)  %> ago
             </small>
-                </li>
-            <% end %>
+            <small>
+                Posted by <%= product.user.first_name  %> 
+            </small>
+    </li>
+    <% end %>
 </ul>
