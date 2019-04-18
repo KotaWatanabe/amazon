@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
-    
+    has_many :news_article, dependent: :nullify
     has_many :product, dependent: :destroy
     has_many :reviews, dependent: :nullify
 
@@ -10,3 +10,4 @@ class User < ApplicationRecord
       "#{first_name} #{last_name}".strip
     end
 end
+

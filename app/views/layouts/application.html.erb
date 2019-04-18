@@ -24,6 +24,10 @@
      <% if user_signed_in? %>
     Hello <%= current_user.first_name %>,
     <%= link_to "Logout", session_path, method: :delete, data: {confirm: "are you sure you want to log out?"} %>
+        <% if current_user.is_admin? %>
+         |
+         <%= link_to 'Panel', admin_panel_path %>
+       <% end %>
      <% else %>
     <%= link_to "Login", new_session_path %>
     |

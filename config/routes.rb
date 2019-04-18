@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post("/contact_us/create", {to: "contact#create"})
   get("/admin/panel", {to: "admin#index"})
 
+  resources :news_articles, only:[:new,:create,:show,:index,:destroy,:edit]
+
   # User route
   resources :users, only:[:new, :create]
 
